@@ -8,8 +8,10 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 
 os.environ["USER_AGENT"]="Brainlox_chatbot/1.0"
+#user agent also should be set in the environment
+
 HUGGINGFACEHUB_API_TOKEN=os.getenv("HUGGINGFACEHUB_API_TOKEN") 
-#Token should be set in environment variables
+#token should be set in environment variables
 
 if not HUGGINGFACEHUB_API_TOKEN:
     raise ValueError("HUGGINGFACEHUB_API_TOKEN is not set in environment variables.")
@@ -58,9 +60,3 @@ def ask():
 if __name__=="__main__":
     app.run(debug=True)
 
-
-
-
-"""
-curl -X POST "http://127.0.0.1:5000/ask" -H "Content-Type: application/json" -d '{"query": "What is the cost of course"}'
-"""
